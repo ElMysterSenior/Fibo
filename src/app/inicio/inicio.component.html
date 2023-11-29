@@ -1,0 +1,47 @@
+<head>
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+</head>
+
+
+<div class="container d-flex align-items-center justify-content-center" style="min-height: 100vh;">
+  <div class="row w-100">
+    <div class="col-12 col-md-8 col-lg-6 mx-auto">
+      <div class="card shadow">
+        <div class="card-body">
+          <h2 class="text-center mb-4">SOLICITUD DE EXÁMENES ESPECIALES</h2>
+          <div class="mb-3">
+            <input type="text" class="form-control" placeholder="Ingresa tu Matrícula"
+              [(ngModel)]="matricula" #matriculaInput="ngModel" name="matricula"
+              minlength="7" maxlength="8" required>
+          </div>
+          <div *ngIf="matriculaInput.errors && (matriculaInput.dirty || matriculaInput.touched)">
+            <small class="text-danger" *ngIf="matriculaInput.errors['required']">
+              La matrícula es obligatoria.
+            </small>
+            <small class="text-danger" *ngIf="matriculaInput.errors['minlength']">
+              La matrícula debe tener al menos 7 caracteres.
+            </small>
+            <small class="text-danger" *ngIf="matriculaInput.errors['maxlength']">
+              La matrícula no puede tener más de 8 caracteres.
+            </small>
+          </div>
+          <button class="btn btn-success w-100" [disabled]="!matriculaInput.valid" (click)="verificarYRedirigir()">
+            Solicitar
+          </button>
+          <script>
+            function correctCaptcha(response) {
+              // Esta función puede permanecer vacía o realizar alguna acción adicional si es necesario
+              console.log('Captcha verificado:', response);
+              // Llamar a la función en tu componente de Angular
+              capturaRespuesta(response);
+            }
+          </script>
+          
+          <div class="g-recaptcha" data-sitekey="6LdXmhwpAAAAAMCZ1dCAN51JJaCUOuybU0_1D4P9"></div>
+          <a href="/consulta" class="text-center text-danger mt-4 d-block">Consultar Solicitudes de Exámenes Especiales</a>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</div>

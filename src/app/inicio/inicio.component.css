@@ -1,0 +1,31 @@
+/* Estilos personalizados */
+.container {
+    background: #f8f9fa; /* Color de fondo claro para el contenedor */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); /* Sombra suave */
+    padding: 2rem; /* Espaciado interior */
+    height: 100vh;
+}
+
+.input-group {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra para el input y el botón */
+}
+
+.input-group .form-control {
+    border-radius: 0.25rem 0 0 0.25rem; /* Bordes redondeados solo en el lado izquierdo */
+}
+
+.input-group .btn {
+    border-radius: 0 0.25rem 0.25rem 0; /* Bordes redondeados solo en el lado derecho */
+}
+
+.card {
+    margin-top: -50px; /* Ajuste para centrar la tarjeta con la altura del contenedor */
+  }
+  
+  /* Media query si necesitas ajustar el centrado en pantallas más pequeñas */
+  @media (max-width: 768px) {
+    .card {
+      margin-top: 0;
+    }
+  }

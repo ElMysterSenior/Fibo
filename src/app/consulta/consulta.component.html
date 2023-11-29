@@ -1,0 +1,53 @@
+<div class="container mt-5">
+  <div class="row justify-content-between mb-3">
+    <div class="col-md-6">
+      <button class="btn btn-primary" (click)="exportarExcel()" [disabled]="exportButtonDisabled">Exportar EXCEL</button>
+    </div>
+    <div class="col-md-6 d-flex justify-content-end">
+      <div class="input-group">
+        <input type="text" [(ngModel)]="matricula" class="form-control" placeholder="Matrícula">
+        <button class="btn btn-secondary" (click)="buscarAlumno()">Buscar</button>
+      </div>
+    </div>
+  </div>
+  <ngx-datatable
+    class="bootstrap p-2"
+    [rows]="rows"
+    [columnMode]="ColumnMode.force"
+    [headerHeight]="50"
+    [footerHeight]="50"
+    [externalPaging]="true"
+    [count]="rows.length"
+    [scrollbarH]="true"
+
+    [loadingIndicator]="isLoading">
+
+        <!-- Columna de acciones que incluye botones de modificar y eliminar -->
+        <ngx-datatable-column name="Acciones" [sortable]="false" [draggable]="false" [resizeable]="false">
+          <ng-template let-row="row" ngx-datatable-cell-template>
+            <button class="btn btn-warning datatable-action-btn" (click)="modificar(row)">Modificar</button>
+            <button class="btn btn-danger datatable-action-btn" (click)="eliminar(row)">Eliminar</button>
+          </ng-template>
+        </ngx-datatable-column>
+        
+        
+    <!-- Columna para la matrícula -->
+    <ngx-datatable-column name="Matrícula" prop="matricula"></ngx-datatable-column>
+
+    <!-- Columna para el nombre -->
+    <ngx-datatable-column name="Nombre" prop="nombre"></ngx-datatable-column>
+
+    <!-- ... otras columnas para cada propiedad de tus datos ... -->
+    <ngx-datatable-column name="Carrera" prop="carrera"></ngx-datatable-column>
+    <ngx-datatable-column name="Grado" prop="grado"></ngx-datatable-column>
+    <ngx-datatable-column name="Email" prop="email"></ngx-datatable-column>
+    <ngx-datatable-column name="Teléfono" prop="telefono"></ngx-datatable-column>
+    <ngx-datatable-column name="Clave Materia" prop="clave_materia"></ngx-datatable-column>
+    <ngx-datatable-column name="Materia" prop="materia"></ngx-datatable-column>
+    <ngx-datatable-column name="Estatus" prop="estatus"></ngx-datatable-column>
+
+
+
+  </ngx-datatable>
+  
+</div>

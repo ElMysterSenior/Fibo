@@ -1,0 +1,85 @@
+<form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+    <div class="container py-5">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="card border-0 shadow">
+            <div class="card-body p-5">
+              <h1 class="card-title text-center mb-4">MODIFICAR ALUMNO</h1>
+  
+              <div class="mb-3">
+                <label for="matricula" class="form-label">Matrícula:</label>
+                <span class="form-control-plaintext">{{ formulario.get('matricula')?.value }}</span>
+              </div>
+              <div class="mb-3">
+                <label for="nombre" class="form-label">Nombre:</label>
+                <span class="form-control-plaintext">{{ formulario.get('nombre')?.value }}</span>
+              </div>
+              <div class="mb-3">
+                <label for="email" class="form-label">Correo:</label>
+                <input formControlName="email" type="email" class="form-control" id="email">
+                <div *ngIf="formulario.get('email')?.invalid && formulario.get('email')?.touched" class="text-danger">
+                  Por favor, introduce un correo electrónico válido.
+                </div>
+              </div>
+              <div class="mb-3">
+                <label for="telefono" class="form-label">Teléfono:</label>
+                <input formControlName="telefono" type="tel" class="form-control" id="telefono">
+                <div *ngIf="formulario.get('telefono')?.invalid && formulario.get('telefono')?.touched" class="text-danger">
+                  Por favor, introduce un número de teléfono válido (10 dígitos).
+                </div>
+              </div>
+              <div class="mb-3">
+                <label for="grado" class="form-label">Grado:</label>
+                <select formControlName="grado" class="form-select" id="grado">
+                  <option value="" disabled selected>Seleccionar</option>
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                  <option>6</option>
+                  <option>7</option>
+                  <option>8</option>
+                  <option>9</option>
+                  <option>10</option>
+                  <option>11</option>
+                  <option>12</option>
+                  <option>13</option>
+                </select>
+                <div *ngIf="formulario.get('grado')?.invalid && formulario.get('grado')?.touched" class="text-danger">
+                  Por favor, selecciona un grado.
+                </div>
+              </div>
+              <div class="mb-3">
+                <label for="carrera" class="form-label">Carrera:</label>
+                <span class="form-control-plaintext">{{ formulario.get('carrera')?.value }}</span>
+              </div>
+              <div class="mb-3">
+                <label for="clave_materia" class="form-label">Clave de la Materia:</label>
+                <span class="form-control-plaintext">{{ formulario.get('clave_materia')?.value }}</span>
+              </div>
+              <div class="mb-3">
+                <label for="materia" class="form-label">Materias:</label>
+                <span class="form-control-plaintext">{{ formulario.get('materia')?.value }}</span>
+              </div>
+
+              <div class="mb-3">
+                <label for="estatus" class="form-label">Estatus:</label>
+                <select formControlName="estatus" class="form-select" id="estatus">
+                  <option value="" disabled selected>Seleccionar</option>
+                  <option value="Activo">Activo</option>
+                  <option value="Pendiente">Pendiente</option>
+                </select>
+                <div *ngIf="formulario.get('estatus')?.invalid && formulario.get('estatus')?.touched" class="text-danger">
+                  Por favor, selecciona un estatus.
+                </div>
+              </div>
+              <div class="text-center">
+                <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>

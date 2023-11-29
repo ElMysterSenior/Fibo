@@ -1,0 +1,95 @@
+/* Estilos para ngx-datatable */
+ngx-datatable.bootstrap {
+  font-size: 12px;
+}
+
+ngx-datatable.bootstrap .datatable-body-cell,
+ngx-datatable.bootstrap .datatable-header-cell {
+  padding: 8px;
+  border: 1px solid #d1d1d1; /* Ajusta el color según tus necesidades */
+  overflow: hidden; /* Previene desbordamientos */
+  word-break: break-all; /* Asegura que el texto se ajuste dentro de la celda */
+}
+
+/* Estilos responsivos para ngx-datatable */
+@media only screen and (max-width: 768px) {
+  ngx-datatable.bootstrap .datatable-header-cell,
+  ngx-datatable.bootstrap .datatable-body-cell {
+    font-size: 10px;
+    padding: 4px; /* Reduce el padding en dispositivos móviles */
+  }
+}
+
+/* Estilos por defecto para pantallas grandes */
+ngx-datatable.bootstrap .datatable-header-cell,
+ngx-datatable.bootstrap .datatable-body-cell {
+  padding: 8px; /* Espaciado suficiente para contenido */
+  border: 1px solid #d1d1d1; /* Líneas delimitadoras */
+}
+
+/* Media queries para pantallas más pequeñas */
+@media only screen and (max-width: 1200px) {
+  /* Estilos para pantallas de tamaño mediano */
+  ngx-datatable.bootstrap .datatable-header-cell,
+  ngx-datatable.bootstrap .datatable-body-cell {
+    padding: 6px; /* Padding más pequeño */
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  /* Estilos para tablets */
+  ngx-datatable.bootstrap .datatable-header-cell,
+  ngx-datatable.bootstrap .datatable-body-cell {
+    padding: 4px; /* Padding aún más pequeño */
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  /* Estilos para dispositivos móviles */
+  ngx-datatable.bootstrap .datatable-header-cell,
+  ngx-datatable.bootstrap .datatable-body-cell {
+    padding: 2px; /* Padding mínimo */
+    font-size: 10px; /* Fuente más pequeña para ahorrar espacio */
+  }
+
+
+}
+
+/* Media queries para pantallas muy pequeñas */
+@media only screen and (max-width: 480px) {
+  /* Estilos para teléfonos móviles pequeños */
+  ngx-datatable.bootstrap .datatable-header-cell,
+  ngx-datatable.bootstrap .datatable-body-cell {
+    padding: 1px; /* Padding super mínimo */
+    font-size: 9px; /* Fuente más pequeña aún */
+  }
+}
+/* consulta.component.css */
+/* Estilos para los botones dentro de ngx-datatable */
+.datatable-action-btn {
+  margin-right: 5px; /* Espacio entre botones */
+  padding: .25rem .5rem; /* Padding más pequeño para botones más pequeños */
+  font-size: .75rem; /* Tamaño de fuente más pequeño */
+  line-height: 1.5;
+  border-radius: .2rem; /* Bordes redondeados sutiles */
+}
+
+/* Estilos para pantallas pequeñas */
+@media (max-width: 576px) {
+  .datatable-action-btn {
+    margin-right: 2px; /* Espacio entre botones ajustado para pantallas pequeñas */
+    padding: .2rem .4rem; /* Padding aún más pequeño para pantallas pequeñas */
+    font-size: .7rem; /* Tamaño de fuente reducido para pantallas pequeñas */
+  }
+}
+
+.ngx-datatable .datatable-body-cell {
+  overflow: visible !important;
+  white-space: normal !important;
+  height: auto !important;
+}
+
+.ngx-datatable .datatable-row-center .datatable-body-cell {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
